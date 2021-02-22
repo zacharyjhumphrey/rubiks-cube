@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-color: #696969;
+        }
+
+        .info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: .19em .32em;
+            border: 1px solid rgb(216, 216, 216);
+            font-size: 1.1em;
+            font-family: monospace;
+            font-weight: bold;
+            background-color: #1e74ff;
+        }   
+
+        .controls {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            display: grid;
+            font-size: 1.4em;
+            font-family: monospace;
+            font-weight: bold;
+
+            grid-template-columns: repeat(4, 2.2em);
+            grid-template-rows: repeat(6, 2.2em);
+            gap: 8px;
+        }
+
+        .controls > span {
+            border-radius: 3px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #37A8FF;
+            color: white;
+            background-color: #37A8FF;
+        }
+
+        /* .controls #bg-anim {
+            background-color: #ccc;
+            position: absolute;
+        } */
+
+        .controls .reverse {
+            text-indent: .2em;
+        }
+
+        .controls #scramble {
+            grid-column-end: span 4;
+        }
+
+        .controls #plus, .controls #enter {
+            grid-row-end: span 2;
+        }
+
+        .controls #zero {
+            grid-column-end: span 2;
+        }
+
+        .controls #num-lock {
+            background-color: #ccc;
+            border-color: #ccc;
+            cursor: default;
+        }
+
+
+        /* GENERAL */
+        .hide-cursor { 
+            cursor: none;
+        }
+        .noselect {
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="assets/ext/tween/tween.js-master/src/tween.js"></script>
+
+</head>
+
+<body>
+    <div class="info noselect">
+        <div class="fps">
+            <span>FPS: </span>
+            <span id="count">--</span>
+        </div>
+    </div>
+
+    <div class="controls noselect">
+        <span id="scramble"> 
+            Scramble 
+            <!-- <span id="bg-anim">SCRAMBLE</span> -->
+        </span>
+        <span id="num-lock"> </span>
+        <span id="div">/</span>
+        <span id="mult">*</span>
+        <span id="minus">-</span>
+        <span id="seven">D</span>
+        <span id="eight">B</span>
+        <span id="nine" class="reverse">B'</span>
+        <span id="plus">L</span>
+        <span id="four" class="reverse">D'</span>
+        <span id="five">U</span>
+        <span id="six" class="reverse">U'</span>
+        <span id="one">F</span>
+        <span id="two">R</span>
+        <span id="three" class="reverse">R'</span>
+        <span id="enter" class="reverse">L'</span>
+        <span id="zero" class="reverse">F'</span>
+        <span id="dot">.</span>
+    </div>
+
+    <script src="assets/ext/three.min.js"></script>
+    <script src="assets/ext/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="assets/ext/examples/js/utils/SkeletonUtils.js"></script>
+    <script src="assets/Camera.js"> </script>
+    <script src="assets/Canvas.js"> </script>
+    <script src="assets/Cubelet.js"> </script>
+    <script src="assets/Cube.js"> </script>
+    <script type="module" src="assets/main.js"> </script>
+</body>
+
+</html>

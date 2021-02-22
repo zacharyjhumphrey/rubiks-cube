@@ -1,0 +1,13 @@
+Goals for the rest of the day: 
+    CHECK | Complete cubelet::rotate for x, y and z 
+    Create a function in cube that determines what cubes to rotate for each function (top, front, back, etc.)
+    Init the panels the right way
+    Determine whether I'm going to simp over React or continue to torture myself with JQuery
+        If I'm going to continue with JQuery, I have to do some research AND I need to crete a canvas object
+        If I'm going through with React, I need to think through whethe there will be any porting issues
+
+Notes: 
+    In some free time, I need to design the UI
+
+Next session: 
+    I need to rigure out how I want to animate the cube
