@@ -38,14 +38,17 @@ class Canvas {
 
         this.canvas.mousedown(() => {
             _this.events.mousedown = true;
+            this.canvas.addClass('removeCursor');
         });
 
         this.canvas.mouseleave(() => {
             _this.events.mousedown = false;
+            this.canvas.removeClass('removeCursor');
         });
 
         this.canvas.mouseup(() => {
             _this.events.mousedown = false;
+            this.canvas.removeClass('removeCursor');
         });
     }
 
